@@ -8,7 +8,8 @@ function App() {
       <h1 style={{"textAlign": "center"}}>Quizz App</h1>
       <div id="main">
       {
-      (choice==0)? (<button className="buttons" style={{"fontWeight": "bold"}} onClick={()=>{changeChoice(choice+1);}}>Start Quiz</button>) : (<h1>Hello</h1>)
+      (choice==0)? (<button className="buttons" style={{"fontWeight": "bold"}} onClick={()=>{changeChoice(choice+1);}}>Start Quiz</button>) : 
+      (choice==1) ? (<h1>Hello</h1>) : (<h1>Hello2</h1>)
       }
       </div>
     </div>
