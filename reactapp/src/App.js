@@ -6,8 +6,9 @@ function App() {
   return (
     <div>
       <h1 style={{"text-align": "center"}}>Quiz App</h1>
-      <h1>{{choice}}</h1>
-      <button class="buttons" style={{"font-weight": "bold"}} onClick={{()=>{changeChoice(1);}}}>Start Quiz</button>
+      <div id="main">
+      <button class="buttons" style={{"font-weight": "bold"}} onClick={()=>{changeChoice(choice+1);}}>Start Quiz</button>
+      </div>
     </div>
   );
 }
