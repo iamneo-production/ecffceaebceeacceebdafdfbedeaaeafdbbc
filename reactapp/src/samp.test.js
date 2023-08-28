@@ -9,4 +9,9 @@ describe('Testing App Component', () => {
         expect(wrapper.find('button').instance()).toBeDefined();
         wrapper.unmount();
     });
+    test('testcase1', () => {
+        wrapper = mount(<App />);
+        expect(wrapper.instance()).toBeDefined();
+        wrapper.unmount();
+    });
 })
