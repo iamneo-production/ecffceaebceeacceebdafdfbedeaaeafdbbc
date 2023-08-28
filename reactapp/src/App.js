@@ -5,9 +5,11 @@ function App() {
   var [choice,changeChoice]=useState(0);
   return (
     <div>
-      <h1 style={{"text-align": "center"}}>Quiz App</h1>
+      <h1 style={{"text-align": "center"}}>Quizz App</h1>
       <div id="main">
-      <button class="buttons" style={{"font-weight": "bold"}} onClick={()=>{changeChoice(choice+1);}}>Start Quiz</button>
+      {
+      (choice==0)? (<button class="buttons" style={{"font-weight": "bold"}} onClick={()=>{changeChoice(choice+1);}}>Start Quiz</button>) : (<h1>Hello</h1>)
+      }
       </div>
     </div>
   );
