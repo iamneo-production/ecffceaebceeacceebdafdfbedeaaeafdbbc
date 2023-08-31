@@ -11,6 +11,7 @@ function App(){
         <div>
             <h1>Quizz App</h1>
             <button>Start Quiz</button>
+            <Button id="1" className="hlo" onClick="nothing=1;" hidden=false  />
         </div>
     );
 }
