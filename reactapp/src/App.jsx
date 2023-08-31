@@ -183,7 +183,7 @@ class App extends React.Component {
                         </div>
                         } />
                         <Route path="/result" exact element={<div><center><div className='result'><Banner>You have answered {this.state.questionsCorrect}/5 Correctly</Banner></div>
-                            <Button id="button"className={this.state.css} onClick={redir} >Retry</Button></center>
+                            <Button id="button"className={this.state.css} onClick={redir} >Start Quiz</Button></center>
                             </div>} />
                     </Routes>
                     <Link to={{
