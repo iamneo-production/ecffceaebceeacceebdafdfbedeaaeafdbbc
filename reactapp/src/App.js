@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './index.css';
+import Button from './components/UI/Button/Button';
+import Card  from './components/UI/Card/Card';
+import Banner from './components/UI/Banner/Banner';
+import {Route, Routes,Link,BrowserRouter} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//create class component
+function App(){
+    return (
+        <div>
+            <h1>Quizz App</h1>
+            <button>Start Quiz</button>
+        </div>
+    );
 }
-
 export default App;
