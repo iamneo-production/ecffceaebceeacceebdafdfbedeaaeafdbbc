@@ -24,11 +24,12 @@ function App(){
         console.log("Here",qno,states.questions[qno].correctAns,op_no);
     }
     return (
-        <div style={{paddingLeft: "20%"}}>
+        <div style={{textAlign: "center"}}>
             <h1>Quizz App</h1>
             {states.curpage==="strt" ? 
-            <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "50%"}}>Start Quiz</button> : ""
+            <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "50%"}} onClick={()=>setStates({...states,curpage: "quiz"})}>Start Quiz</button> : ""
             }
+            
             {/* <Button tag="1" choice="1" name="hlo" content="Start Quiz" isdisabled="" onclick={setAns}/> */}
         </div>
     )
