@@ -3,7 +3,7 @@ import Button from "./components/UI/Button/Button";
 function App(){
     var [states,setStates]=useState({
         curpage: "strt",
-        correctAnswer: 0,
+        tot_cor_ans: 0,
         questions: [
             {
                 "Question": "Who is the father of nation?",
@@ -15,18 +15,19 @@ function App(){
             }
         ]
     });
-    const setAns=(qno,opno)=>{
-        var prv=states.correctAnswer;
-        if(states.questions[qno].correctAnswer===opno){
-        setStates({...states,correctAnswer: prv+1});
+    const setAns=(qno,op_no)=>{
+        var prv=states.tot_cor_ans;
+        if(states.questions[qno].correctAns===op_no){
+        setStates({...states,tot_cor_ans: prv+1});
         
         }
-        console.log("Here");
+        console.log("Here",qno,states.questions[qno].correctAns,op_no);
     }
     return (
         <div>
             <h1>Quizz App</h1>
-            <Button tag="1" name="hlo" content="123" isdisabled="" Setans={setAns()}/>
+            <Button tag="1" choice="1" name="hlo" content="123" isdisabled="" Setans={setAns}/>
+            <h1>{states.tot_cor_ans}</h1>
         </div>
     )
 }
