@@ -1,20 +1,20 @@
 import {useState} from "react";
 import Button from "./components/UI/Button/Button";
 function App(){
-    var Allstates,setStates=useState({
+    var [states,setStates]=useState({
         curpage: "strt",
         correctAnswer: 0,
 
     });
-    function setAns(qno,curans){
-        if(states.qno[qno].correctAns==curans){
-        setStates({...states,correctAnswer: 1});
-        }
-    }
+    // function setAns(qno,curans){
+    //     if(Allstates.qno[qno].correctAns===curans){
+    //     setStates({...Allstates,correctAnswer: 1});
+    //     }
+    // }
     return (
         <div>
             <h1>Quizz App</h1>
-            <div>Correct Ans {Allstates.}</div>
+            <Button name="hlo" content="123"/>
         </div>
     )
 }

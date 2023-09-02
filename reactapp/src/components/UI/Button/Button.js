@@ -1,6 +1,6 @@
 function Button(props){
     return(
-        <button className={props.name}>{props.content}</button>
+        <button className={props.name} {isdiabled==true ? }>{props.content}</button>
     )
 }
-export default Button
+export default Button;
