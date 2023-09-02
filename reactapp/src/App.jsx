@@ -3,7 +3,7 @@ import './index.css';
 import Button from './components/UI/Button/Button';
 import Card  from './components/UI/Card/Card';
 import Banner from './components/UI/Banner/Banner';
-import {Route, Routes,Link,BrowserRouter} from 'react-router-dom';
+// import {Route, Routes,Link,BrowserRouter} from 'react-router-dom';
 
 //create class component
 class App extends React.Component {
@@ -11,6 +11,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            curpage: "strt",
             questionsCorrect: 0,
             count:0,
             attempt:0,
@@ -99,12 +100,10 @@ class App extends React.Component {
         console.log(this.btnName);
         var lnk=this.state.link;
         return(
-            <BrowserRouter>
                 <div className="main">
                     <h1 className="title">Quizz App</h1>
-                    <Routes>
                         {/* <Route path="/" exact element={} /> */}
-                        
+                        {(lnk==="strt") ? 
                             <div className="quiz">
                             <Card 
                                 key={this.state.questionProp[0].questionId}
@@ -181,18 +180,13 @@ class App extends React.Component {
                                 }}
                                 answer={this.state.questionProp[4].answer}
                             />
-                        </div>
+                        </div> : "" }
                         
-                        <Route path="/result" exact element={<div><center><div className='result'><Banner>You have answered {this.state.questionsCorrect}/5 Correctly</Banner></div>
+                        <div><center><div className='result'><Banner>You have answered {this.state.questionsCorrect}/5 Correctly</Banner></div>
                             <Button id="button"className={this.state.css} onClick={redir} >Start Quiz</Button></center>
-                            </div>} />                    <Link to={{
-                        pathname:this.state.link,
-                        state:{questionsCorrect:this.state.questionsCorrect}
-                    }}>
+                            </div>
                     <Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{this.state.btnName}</Button>
-                    </Link>
                 </div>
-            </BrowserRouter>
         );
     }
 }
