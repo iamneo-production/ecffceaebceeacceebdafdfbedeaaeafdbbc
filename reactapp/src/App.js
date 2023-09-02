@@ -1,17 +1,19 @@
 import {useState} from "react";
 function App(){
-    states,setState=useState({
+    var states,setState=useState({
         curpage: "strt",
-        currectAnswer: 0,
+        correctAnswer: 0,
 
     });
-    function setAns(qno){
-        if(states.qno[0].correctAns==)
-        setState({...states,currectAnswer: currectAnswer+1})
+    function setAns(qno,curans){
+        if(states.qno[qno].correctAns==curans){
+        setState({...states,correctAnswer: correctAnswer+1});
+        }
     }
     return (
         <div>
-
+            <h1>Quizz App</h1>
+            <div>Correct Ans {states.correctAns}</div>
         </div>
     )
 }
