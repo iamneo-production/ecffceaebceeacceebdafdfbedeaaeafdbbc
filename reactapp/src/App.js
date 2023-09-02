@@ -8,10 +8,7 @@ function App(){
         questions: [
             {
                 Question: "Who is the father of nation?",
-                1:"Nehru",
-                2:"Gandhi",
-                3:"Ambedkar",
-                4:"Bose",
+                Options: ["Nehru","Gandhi","Ambedkar","Bose"],
                 correctAns: "4"
             }
         ]
@@ -30,7 +27,7 @@ function App(){
             {states.curpage==="strt" ? 
             <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "50%"}} onClick={()=>setStates({...states,curpage: "quiz"})}>Start Quiz</button> : ""
             }
-            <Banner question={states.}/>
+            <Banner question={states.questions[0].Question} tag="1" options={states.questions[0].Options}/>
             {/* <Button tag="1" choice="1" name="hlo" content="Start Quiz" isdisabled="" onclick={setAns}/> */}
         </div>
     )
