@@ -191,7 +191,7 @@ class App extends React.Component {
                         pathname:this.state.link,
                         state:{questionsCorrect:this.state.questionsCorrect}
                     }}>
-                    {(lnk==="/quiz") ? <Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{this.state.btnName}</Button> : <p>1</p>}
+                    <Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{(lnk==="/quiz") ? "" : this.state.btnName}</Button>
                     </Link>
                 </div>
             </BrowserRouter>
