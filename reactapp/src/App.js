@@ -24,10 +24,10 @@ function App(){
         console.log("Here",qno,states.questions[qno].correctAns,op_no);
     }
     return (
-        <div>
+        <div style={{paddingLeft: "20%"}}>
             <h1>Quizz App</h1>
             {states.curpage==="strt" ? 
-            <button>Start Quiz</button> : ""
+            <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "50%"}}>Start Quiz</button> : ""
             }
             {/* <Button tag="1" choice="1" name="hlo" content="Start Quiz" isdisabled="" onclick={setAns}/> */}
         </div>
