@@ -14,7 +14,7 @@ function App(){
     return (
         <div>
             <h1>Quizz App</h1>
-            <Button name="hlo" content="123"/>
+            <Button name="hlo" content="123" isdisabled="true"/>
         </div>
     )
 }
