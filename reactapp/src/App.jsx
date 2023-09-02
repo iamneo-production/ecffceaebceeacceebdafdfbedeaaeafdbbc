@@ -102,10 +102,9 @@ class App extends React.Component {
             <BrowserRouter>
                 <div className="main">
                     <h1 className="title">Quizz App</h1>
-                    <Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >Start Quiz</Button>
                     <Routes>
                         {/* <Route path="/" exact element={} /> */}
-                        <Route path="/quiz" exact element={
+                        
                             <div className="quiz">
                             <Card 
                                 key={this.state.questionProp[0].questionId}
@@ -183,18 +182,15 @@ class App extends React.Component {
                                 answer={this.state.questionProp[4].answer}
                             />
                         </div>
-                        } />
+                        
                         <Route path="/result" exact element={<div><center><div className='result'><Banner>You have answered {this.state.questionsCorrect}/5 Correctly</Banner></div>
                             <Button id="button"className={this.state.css} onClick={redir} >Start Quiz</Button></center>
-                            </div>} />
-                        <Route path="/retry" exact element={<Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{this.state.btnName}</Button>} />
-                    </Routes>
-                    {/* <Link to={{
+                            </div>} />                    <Link to={{
                         pathname:this.state.link,
                         state:{questionsCorrect:this.state.questionsCorrect}
                     }}>
-                    
-                    </Link> */}
+                    <Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{this.state.btnName}</Button>
+                    </Link>
                 </div>
             </BrowserRouter>
         );
