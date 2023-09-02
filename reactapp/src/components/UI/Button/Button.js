@@ -1,6 +1,6 @@
 function Button(props){
     return(
-        <button ></button>
+        <button className={props.name}>{props.content}</button>
     )
 }
 export default Button
