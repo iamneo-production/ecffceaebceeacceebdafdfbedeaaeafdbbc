@@ -7,11 +7,11 @@ function App(){
         questions: [
             {
                 "Question": "Who is the father of nation?",
-                "Option1":"Nehru",
-                "Option2":"Gandhi",
-                "Option3":"Ambedkar",
-                "Option4":"Bose",
-                "CorrectAns": "4"
+                "1":"Nehru",
+                "2":"Gandhi",
+                "3":"Ambedkar",
+                "4":"Bose",
+                correctAns: "4"
             }
         ]
     });
@@ -19,14 +19,14 @@ function App(){
         var prv=states.tot_cor_ans;
         if(states.questions[qno].correctAns===op_no){
         setStates({...states,tot_cor_ans: prv+1});
-        
+
         }
         console.log("Here",qno,states.questions[qno].correctAns,op_no);
     }
     return (
         <div>
             <h1>Quizz App</h1>
-            <Button tag="1" choice="1" name="hlo" content="123" isdisabled="" Setans={setAns}/>
+            <Button tag="1" choice="1" name="hlo" content="Start Quiz" isdisabled="" Setans={setAns}/>
             <h1>{states.tot_cor_ans}</h1>
         </div>
     )
