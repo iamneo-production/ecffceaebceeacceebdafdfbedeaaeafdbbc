@@ -15,16 +15,18 @@ function App(){
             }
         ]
     });
-    function setAns(qno,opno){
+    const setAns=(qno,opno)=>{
         var prv=states.correctAnswer;
         if(states.questions[qno].correctAnswer===opno){
         setStates({...states,correctAnswer: prv+1});
+        
         }
+        console.log("Here");
     }
     return (
         <div>
             <h1>Quizz App</h1>
-            <Button name="hlo" content="123" isdisabled="true" onClick={()=>{this.setAns(1)}}/>
+            <Button tag="1" name="hlo" content="123" isdisabled="" Setans={setAns()}/>
         </div>
     )
 }
