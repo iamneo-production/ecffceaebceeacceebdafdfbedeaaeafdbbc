@@ -40,6 +40,12 @@ function App(){
     });
     const setAns=(qno,op_no)=>{
         var prv=states.tot_cor_ans;
+        var prv_ques=states.question;
+        for(var i=0;i<prv_ques.length;i++){
+            if(i===qno){
+                prv_ques[i].isDisabled="true";
+            }
+        }
         if(states.questions[qno].correctAns===op_no){
         setStates({...states,tot_cor_ans: prv+1,});
         }
@@ -52,7 +58,7 @@ function App(){
             {states.curpage==="strt" ? 
             <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "35%",height: "45px"}} onClick={()=>setStates({...states,curpage: "quiz"})}>Start Quiz</button> : ""
             }
-            <Banner question={states.questions[0].Question} tag="1" options={states.questions[0].Options} setAns={setAns}/>
+            <Banner question={states.questions[0].Question} tag="1" options={states.questions[0].Options} setAns={setAns} isDisaled={states.questions[0].isDisabled}/>
             {/* <Banner question={states.questions[1].Question} tag="2" options={states.questions[1].Options}/>
             <Banner question={states.questions[2].Question} tag="3" options={states.questions[2].Options}/>
             <Banner question={states.questions[3].Question} tag="4" options={states.questions[3].Options}/> */}
