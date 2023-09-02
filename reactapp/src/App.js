@@ -26,8 +26,10 @@ function App(){
     return (
         <div>
             <h1>Quizz App</h1>
-            <Button tag="1" choice="1" name="hlo" content="Start Quiz" isdisabled="" Setans={setAns}/>
-            <h1>{states.tot_cor_ans}</h1>
+            {states.curpage==="strt" ? 
+            <button>Start Quiz</button> : ""
+            }
+            {/* <Button tag="1" choice="1" name="hlo" content="Start Quiz" isdisabled="" onclick={setAns}/> */}
         </div>
     )
 }
