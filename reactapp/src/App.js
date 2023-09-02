@@ -34,7 +34,8 @@ function App(){
         ]
     });
     const setAns=(qno,op_no)=>{
-        var prv=states.tot_cor_ans;
+        var prv_ans=states.tot_cor_ans;
+        var prv_att=states.attempted;
         var prv_ques=states.questions;
         for(var i=0;i<prv_ques.length;i++){
             if(i===qno){
@@ -42,10 +43,10 @@ function App(){
             }
         }
         if(states.questions[qno].correctAns===op_no){
-        prv+=1;
+        prv_ans+=1;
         }
-        setStates({...states,tot_cor_ans: prv,prv_ques,attempted: });
-        console.log(states.questions,op_no,qno);
+        setStates({...states,tot_cor_ans: prv_ans,prv_ques,attempted: prv_att+1});
+        console.log(states.attempted);
     }
     return (
         <div >
@@ -58,6 +59,7 @@ function App(){
             <Banner question={states.questions[1].Question} tag="2" options={states.questions[1].Options} setAns={setAns} isDisabled={states.questions[1].isDisabled}/>
             <Banner question={states.questions[2].Question} tag="3" options={states.questions[2].Options} setAns={setAns} isDisabled={states.questions[2].isDisabled}/>
             <Banner question={states.questions[3].Question} tag="4" options={states.questions[3].Options} setAns={setAns} isDisabled={states.questions[3].isDisabled}/>
+            {(states.attempted==3) ? <Button tag="1" choice="1" name="hlo" content="Show Results" isdisabled="" onclick={setAns}/>  : ""}
             {/* <Button tag="1" choice="1" name="hlo" content="Start Quiz" isdisabled="" onclick={setAns}/> */}
         </div>
     )
