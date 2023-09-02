@@ -9,27 +9,32 @@ function App(){
             {
                 Question: "Who is the father of nation ?",
                 Options: ["Nehru","Gandhi","Ambedkar","Bose"],
-                correctAns: "2"
+                correctAns: "2",
+                isDisabled: ""
             },
             {
                 Question: "What color is are the leaves ?",
                 Options: ["Blue","Red","Yellow","Green"],
-                correctAns: "4"
+                correctAns: "4",
+                isDisabled: ""
             },
             {
                 Question: "What color is the sky ?",
                 Options: ["Blue","Red","Yellow","Green"],
-                correctAns: "1"
+                correctAns: "1",
+                isDisabled: ""
             },
             {
                 Question: "What color is the sky ?",
                 Options: ["Blue","Red","Yellow","Green"],
-                correctAns: "4"
+                correctAns: "4",
+                isDisabled: ""
             },
             {
                 Question: "Who is the father of nation?",
                 Options: ["Blue","Red","Yellow","Green"],
-                correctAns: "4"
+                correctAns: "4",
+                isDisabled: ""
             }
         ]
     });
@@ -37,13 +42,13 @@ function App(){
         var prv=states.tot_cor_ans;
         if(states.questions[qno].correctAns===op_no){
         setStates({...states,tot_cor_ans: prv+1,});
-
         }
         console.log("Here",qno,states.questions[qno].correctAns,op_no);
     }
     return (
         <div >
             <h1 style={{textAlign: "center"}}>Quizz App</h1>
+            <p>{states.tot_cor_ans}</p>
             {states.curpage==="strt" ? 
             <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "35%",height: "45px"}} onClick={()=>setStates({...states,curpage: "quiz"})}>Start Quiz</button> : ""
             }
