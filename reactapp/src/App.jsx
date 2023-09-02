@@ -97,6 +97,7 @@ class App extends React.Component {
         }
 
         console.log(this.btnName);
+        var lnk=this.state.link;
         return(
             <BrowserRouter>
                 <div className="main">
@@ -190,8 +191,8 @@ class App extends React.Component {
                         pathname:this.state.link,
                         state:{questionsCorrect:this.state.questionsCorrect}
                     }}>
-                    {{if(this.state.link==='/quiz') ? <Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{this.state.btnName}1</Button> : <></>}}
-                    </Link>
+                    {{if(lnk=="/quiz") ? <h1>S</h1> : <></>}}
+                    <Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{this.state.btnName}1</Button></Link>
                 </div>
             </BrowserRouter>
         );
