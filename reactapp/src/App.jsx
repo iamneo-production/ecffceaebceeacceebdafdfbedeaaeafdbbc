@@ -11,6 +11,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            curpage: "st",
             questionsCorrect: 0,
             count:0,
             attempt:0,
@@ -183,16 +184,8 @@ class App extends React.Component {
                             />
                         </div>
                         } />
-                        <Route path="/result" exact element={<div><center><div className='result'><Banner>You have answered {this.state.questionsCorrect}/5 Correctly</Banner></div>
-                            <Button id="button"className={this.state.css} onClick={redir} >Start Quiz</Button></center>
-                            </div>} />
+
                     </Routes>
-                    <Link to={{
-                        pathname:this.state.link,
-                        state:{questionsCorrect:this.state.questionsCorrect}
-                    }}>
-                    <Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{(lnk==="/quiz") ? "" : this.state.btnName}</Button>
-                    </Link>
                 </div>
             </BrowserRouter>
         );
