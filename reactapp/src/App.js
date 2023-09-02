@@ -26,11 +26,17 @@ function App(){
                 isDisabled: ""
             },
             {
+                Question: "What color is the sky ?",
+                Options: ["Blue","Red","Yellow","Green"],
+                correctAns: "1",
+                isDisabled: ""
+            },
+            {
                 Question: "What color is the fire ?",
                 Options: ["Blue","Red","Yellow","Green"],
                 correctAns: "3",
                 isDisabled: ""
-            },
+            }
         ]
     });
     const setAns=(qno,op_no)=>{
@@ -59,7 +65,8 @@ function App(){
             <Banner question={states.questions[1].Question} tag="2" options={states.questions[1].Options} setAns={setAns} isDisabled={states.questions[1].isDisabled}/>
             <Banner question={states.questions[2].Question} tag="3" options={states.questions[2].Options} setAns={setAns} isDisabled={states.questions[2].isDisabled}/>
             <Banner question={states.questions[3].Question} tag="4" options={states.questions[3].Options} setAns={setAns} isDisabled={states.questions[3].isDisabled}/>
-            {(states.attempted==3) ? <Button tag="1" choice="1" name="hlo" content="Show Results" isdisabled="" onclick={setAns}/>  : ""}
+            <Banner question={states.questions[4].Question} tag="4" options={states.questions[4].Options} setAns={setAns} isDisabled={states.questions[4].isDisabled}/>
+            {(states.attempted==5) ? <Button tag="1" choice="1" name="hlo" content="Show Results" isdisabled="" onclick={setAns}/>  : ""}
             {/* <Button tag="1" choice="1" name="hlo" content="Start Quiz" isdisabled="" onclick={setAns}/> */}
         </div>
     )
