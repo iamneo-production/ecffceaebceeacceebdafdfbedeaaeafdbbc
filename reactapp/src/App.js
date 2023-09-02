@@ -4,17 +4,23 @@ function App(){
     var [states,setStates]=useState({
         curpage: "strt",
         correctAnswer: 0,
-
+        questions: [
+            {
+                "Question": "Who is the father of nation?",
+                
+            }
+        ]
     });
-    // function setAns(qno,curans){
-    //     if(Allstates.qno[qno].correctAns===curans){
-    //     setStates({...Allstates,correctAnswer: 1});
-    //     }
-    // }
+    function setAns(qno){
+
+        if(states.qno[qno].correctAns===curans){
+        setStates({...states,correctAnswer: 1});
+        }
+    }
     return (
         <div>
             <h1>Quizz App</h1>
-            <Button name="hlo" content="123" isdisabled="true"/>
+            <Button name="hlo" content="123" isdisabled="true" onClick={this.setAns(1)}/>
         </div>
     )
 }

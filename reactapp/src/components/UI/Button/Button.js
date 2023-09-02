@@ -1,7 +1,6 @@
 function Button(props){
-    var val=props.isdisabled;
     return(
-        <button className={props.name} {val==="true" ? "disabled" : ""}>{props.content}</button>
+        <button className={props.name} disabled={props.isdisabled}>{props.content}</button>
     )
 }
 export default Button;
