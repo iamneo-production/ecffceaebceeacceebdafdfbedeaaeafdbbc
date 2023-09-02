@@ -81,7 +81,7 @@ class App extends React.Component {
 
     chgBtn=()=>{
         if(this.state.css==="start_btn"){
-            this.setState({css:"show_btn",link:"/result",btnName:"Start Quiz3",isHidden:"hidden"})
+            this.setState({css:"show_btn",link:"/result",btnName:"Start Quiz",isHidden:"hidden"})
         }else if(this.state.link==="/result"){
             this.setState({css:"start_btn",link:"/",btnName:"Show Results",isHidden:"hidden"})
         }
@@ -184,15 +184,15 @@ class App extends React.Component {
                         </div>
                         } />
                         <Route path="/result" exact element={<div><center><div className='result'><Banner>You have answered {this.state.questionsCorrect}/5 Correctly</Banner></div>
-                            <Button id="button"className={this.state.css} onClick={redir} >Start Quiz2</Button></center>
+                            <Button id="button"className={this.state.css} onClick={redir} >Start Quiz</Button></center>
                             </div>} />
                     </Routes>
                     <Link to={{
                         pathname:this.state.link,
                         state:{questionsCorrect:this.state.questionsCorrect}
                     }}>
-                    {{if(lnk=="/quiz") ? <h1>S</h1> : <></>}}
-                    <Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{this.state.btnName}1</Button></Link>
+                    {(lnk==="/quiz") ? <Button id="button"className={this.state.css} onClick={this.chgBtn} hidden={this.state.isHidden} >{this.state.btnName}</Button> : <p>1</p>}
+                    </Link>
                 </div>
             </BrowserRouter>
         );
