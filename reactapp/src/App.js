@@ -87,7 +87,6 @@ function App(){
     return (
         <div className="maindiv">
             <h1 style={{textAlign: "center"}}>Quizz App</h1>
-            <p></p>
             {(states.curpage==="strt") ? 
             <div>
                 {(states.retry==1) ? <div>You scored {states.tot_cor_ans}/5 correctly</div> : ""}
