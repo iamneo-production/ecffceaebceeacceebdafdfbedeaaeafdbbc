@@ -1,6 +1,7 @@
 import {useState} from "react";
 import Button from "./components/UI/Button/Button";
 import Card from "./components/UI/Card/Card";
+import "./"
 function App(){
     var [states,setStates]=useState({
         curpage: "strt",
@@ -87,6 +88,7 @@ function App(){
     return (
         <div className="maindiv">
             <h1 style={{textAlign: "center"}}>Quizz App</h1>
+
             {(states.curpage==="strt") ? 
             <div>
                 {(states.retry==1) ? <div>You scored {states.tot_cor_ans}/5 correctly</div> : ""}
