@@ -14,15 +14,23 @@ function App(){
                 isDisabled: ""
             },
             {
-                Question: "What color is are the leaves ?",
-                Options: ["Blue","Red","Yellow","Green"],
-                correctAns: "4",
+                questionId : 2,
+                question : "What color is are the leaves ?",
+                option1 : "Blue",
+                option2 : "Red",
+                option3 : "Yellow",
+                option4 : "Green",
+                answer : "Green",
                 isDisabled: ""
             },
             {
-                Question: "What color is the sky ?",
-                Options: ["Blue","Red","Yellow","Green"],
-                correctAns: "1",
+                questionId : 2,
+                question : "What color is the sky ?",
+                option1 : "Blue",
+                option2 : "Red",
+                option3 : "Yellow",
+                option4 : "Green",
+                answer : "Blue",
                 isDisabled: ""
             },
             {
@@ -36,16 +44,8 @@ function App(){
                 Options: ["Blue","Red","Yellow","Green"],
                 correctAns: "3",
                 isDisabled: ""
-            },
-            {
-                questionId : 2,
-                question : "What color is are the leaves ?",
-                option1 : "Blue",
-                option2 : "Red",
-                option3 : "Yellow",
-                option4 : "Green",
-                answer : "Green"
             }
+            
         ]
     });
     const setAns=(qno,op_no)=>{
@@ -65,15 +65,6 @@ function App(){
             {states.curpage==="strt" ? 
             <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "35%",height: "45px"}} onClick={()=>setStates({...states,curpage: "quiz"})}>Start Quiz</button> 
             : <div>
-            {
-                // questionId : 2,
-                // question : "What color is are the leaves ?",
-                // option1 : "Blue",
-                // option2 : "Red",
-                // option3 : "Yellow",
-                // option4 : "Green",
-                // answer : "Green"
-            }
             <Card 
             key={states.questions[0].questionId}
             question={states.questions[0].question}
