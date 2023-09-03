@@ -78,6 +78,13 @@ function App(){
         setStates({...states,tot_cor_ans: prv_ans,questions: prv_ques,attempted: prv_att+1});
     }
     const mockFunction=()=>{}
+    const initialise=()=>{
+        let prv_ques=states.questions;
+        for(let i=0;i<5;i++){
+            prv_ques[i].isDisabled="";
+        }
+        setStates({...states,curpage: "quiz",questions: prv_ques,attempted: 0});
+    }
     return (
         <div className="maindiv">
             <h1 style={{textAlign: "center"}}>Quizz App</h1>
@@ -85,7 +92,7 @@ function App(){
             {(states.curpage==="strt") ? 
             <div>
                 {(states.retry==1) ? <div>You scored {states.tot_cor_ans}/5 correctly</div> : ""}
-                <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "35%",height: "45px"}} onClick={()=>setStates({...states,curpage: "quiz"})}>Start Quiz</button> 
+                <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "35%",height: "45px"}} onClick={()=>{initialise()}}>Start Quiz</button> 
             </div>
             :
             <div className="Quiz">
@@ -158,7 +165,7 @@ function App(){
             }}
             answer={states.questions[4].answer}
             />             
-            {(states.attempted>=5) ? <Button tag="1" choice="1" name="hlo" isdisabled="" onclick={()=>{setStates({...states,curpage: "strt"})}}>Show Results</Button>  : ""}
+            {(states.attempted>=5) ? <Button tag="1" choice="1" name="hlo" isdisabled="" onclick={()=>{setStates({...states,curpage: "strt",retry: 1})}}>Show Results</Button>  : ""}
             </div>
             }
             
