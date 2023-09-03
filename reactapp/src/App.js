@@ -1,6 +1,6 @@
 import {useState} from "react";
 import Button from "./components/UI/Button/Button";
-import Banner from "./components/UI/Banner/Banner";
+import Banner from "./components/UI/Card/Banner";
 function App(){
     var [states,setStates]=useState({
         curpage: "strt",
