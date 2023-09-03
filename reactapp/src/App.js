@@ -8,6 +8,15 @@ function App(){
         attempted: 0,
         questions: [
             {
+                questionId : 2,
+                question : "What color is are the leaves ?",
+                option1 : "Blue",
+                option2 : "Red",
+                option3 : "Yellow",
+                option4 : "Green",
+                answer : "Green"
+            },
+            {
                 Question: "Who is the father of nation ?",
                 Options: ["Nehru","Gandhi","Ambedkar","Bose"],
                 correctAns: "2",
@@ -40,15 +49,10 @@ function App(){
         ]
     });
     const setAns=(qno,op_no)=>{
-        var prv_ans=states.tot_cor_ans;
-        var prv_att=states.attempted;
-        var prv_ques=states.questions;
-        for(var i=0;i<prv_ques.length;i++){
-            if(i===qno){
-                prv_ques[i].isDisabled="true";
-            }
-        }
-        if(states.questions[qno].correctAns===op_no){
+        let prv_ans=states.tot_cor_ans;
+        let prv_att=states.attempted;
+        let prv_ques=states.questions;
+        if(states.questions[qno].answer===op_no){
         prv_ans+=1;
         }
         setStates({...states,tot_cor_ans: prv_ans,prv_ques,attempted: prv_att+1});
@@ -61,11 +65,24 @@ function App(){
             {states.curpage==="strt" ? 
             <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "35%",height: "45px"}} onClick={()=>setStates({...states,curpage: "quiz"})}>Start Quiz</button> 
             : <div>
-            <Card question={states.questions[0].Question} tag="1" options={states.questions[0].Options} setAns={setAns} isDisabled={states.questions[0].isDisabled}/>
+            <Card 
+            key={}
+            question={questionProp.question}
+            correctAnswerMarkUpdate={mockFunction}
+            attempt={mockFunction}
+            options={{
+            option1: questionProp.option1,
+            option2: questionProp.option2,
+            option3: questionProp.option3,
+            option4: questionProp.option4
+            }}
+            answer={questionProp.answer}
+            />                
+            {/* <Card question={states.questions[0].Question} tag="1" options={states.questions[0].Options} setAns={setAns} isDisabled={states.questions[0].isDisabled}/>
             <Card question={states.questions[1].Question} tag="2" options={states.questions[1].Options} setAns={setAns} isDisabled={states.questions[1].isDisabled}/>
             <Card question={states.questions[2].Question} tag="3" options={states.questions[2].Options} setAns={setAns} isDisabled={states.questions[2].isDisabled}/>
             <Card question={states.questions[3].Question} tag="4" options={states.questions[3].Options} setAns={setAns} isDisabled={states.questions[3].isDisabled}/>
-            <Card question={states.questions[4].Question} tag="4" options={states.questions[4].Options} setAns={setAns} isDisabled={states.questions[4].isDisabled}/>
+            <Card question={states.questions[4].Question} tag="4" options={states.questions[4].Options} setAns={setAns} isDisabled={states.questions[4].isDisabled}/> */}
             {(states.attempted>=5) ? <Button tag="1" choice="1" name="hlo" content="Show Results" isdisabled="" onclick={()=>{setStates({...states,curpage: "strt"})}}/>  : ""}
             </div>
             }
