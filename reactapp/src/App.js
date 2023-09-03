@@ -8,9 +8,13 @@ function App(){
         attempted: 0,
         questions: [
             {
-                Question: "Who is the father of nation ?",
-                Options: ["Nehru","Gandhi","Ambedkar","Bose"],
-                correctAns: "2",
+                questionId : 1,
+                question : "Who is the father of nation ?",
+                option1 : "Nehru",
+                option2 : "Gandhi",
+                option3 : "Ambedkar",
+                option4 : "Bose",
+                answer : "Gandhi",
                 isDisabled: ""
             },
             {
@@ -24,7 +28,7 @@ function App(){
                 isDisabled: ""
             },
             {
-                questionId : 2,
+                questionId : 3,
                 question : "What color is the sky ?",
                 option1 : "Blue",
                 option2 : "Red",
@@ -34,26 +38,37 @@ function App(){
                 isDisabled: ""
             },
             {
-                Question: "What color is the sky ?",
-                Options: ["Blue","Red","Yellow","Green"],
-                correctAns: "1",
+                questionId : 4,
+                question : "What color is the sky ?",
+                option1 : "Blue",
+                option2 : "Red",
+                option3 : "Yellow",
+                option4 : "Green",
+                answer : "Blue",
                 isDisabled: ""
             },
             {
-                Question: "What color is the fire ?",
-                Options: ["Blue","Red","Yellow","Green"],
-                correctAns: "3",
+                questionId : 5,
+                question : "What color is the fire ?",
+                option1 : "Blue",
+                option2 : "Red",
+                option3 : "Yellow",
+                option4 : "Green",
+                answer : "Yellow",
                 isDisabled: ""
             }
-            
         ]
     });
-    const setAns=(qno,op_no)=>{
+    const setAns=(choice,ans)=>{
         let prv_ans=states.tot_cor_ans;
         let prv_att=states.attempted;
         let prv_ques=states.questions;
-        if(states.questions[qno].answer===op_no){
+        if(choice===ans){
         prv_ans+=1;
+        }
+        for(let i=0;i<5;i++)
+        {
+            if(i==)
         }
         setStates({...states,tot_cor_ans: prv_ans,prv_ques,attempted: prv_att+1});
         console.log(states.attempted);
