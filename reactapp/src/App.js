@@ -74,10 +74,10 @@ function App(){
             }
         }
         setStates({...states,tot_cor_ans: prv_ans,prv_ques,attempted: prv_att+1});
-        console.log(states.attempted);
     }
+    const mockFunction=()=>{}
     return (
-        <div >
+        <div className="maindiv">
             <h1 style={{textAlign: "center"}}>Quizz App</h1>
             <p>{states.tot_cor_ans}</p>
             {states.curpage==="strt" ? 
@@ -126,7 +126,6 @@ function App(){
             key={states.questions[3].questionId}
             question={states.questions[3].question}
             correctAnswerMarkUpdate={setAns}
-            attempt={mockFunction}
             options={{
             option1: states.questions[3].option1,
             option2: states.questions[3].option2,
