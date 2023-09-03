@@ -5,6 +5,7 @@ function App(){
     var [states,setStates]=useState({
         curpage: "strt",
         tot_cor_ans: 0,
+        retry: 0,
         attempted: 0,
         questions: [
             {
@@ -80,10 +81,13 @@ function App(){
     return (
         <div className="maindiv">
             <h1 style={{textAlign: "center"}}>Quizz App</h1>
-            <p>{states.tot_cor_ans}</p>
+            <p></p>
             {(states.curpage==="strt") ? 
-            <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "35%",height: "45px"}} onClick={()=>setStates({...states,curpage: "quiz"})}>Start Quiz</button> 
-            : (states.curpage==="quiz") ? 
+            <div>
+                {(states.retry==1) ? <div>You scored {states.tot_cor_ans}/5 correctly</div> : ""}
+                <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "35%",height: "45px"}} onClick={()=>setStates({...states,curpage: "quiz"})}>Start Quiz</button> 
+            </div>
+            :
             <div className="Quiz">
             <Card 
             qno={states.questions[0].questionId}
@@ -155,9 +159,6 @@ function App(){
             answer={states.questions[4].answer}
             />             
             {(states.attempted>=5) ? <Button tag="1" choice="1" name="hlo" isdisabled="" onclick={()=>{setStates({...states,curpage: "strt"})}}>Show Results</Button>  : ""}
-            </div> 
-            : <div>
-                
             </div>
             }
             
