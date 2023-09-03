@@ -1,7 +1,7 @@
 function Button(props){
     return(
         <div>
-        <button disabled={props.isdisabled} onClick={()=>{props.onclick(props.qno,props.content,props.answer)}}>{props.children}</button>
+        <button disabled={props.isdisabled} onClick={()=>{props.onclick(props.qno,props.children,props.answer)}}>{props.children}</button>
         </div>
     )
 }

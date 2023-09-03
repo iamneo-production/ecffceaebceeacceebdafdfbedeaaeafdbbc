@@ -70,8 +70,7 @@ function App(){
         for(let i=0;i<5;i++)
         {
             if(i===tag-1){
-            prv_ques[i].isDisabled="true";
-            console.log(tag);
+            prv_ques[i].isDisabled=true;
             }
         }
         console.log(prv_ques);
@@ -83,7 +82,7 @@ function App(){
         for(let i=0;i<5;i++){
             prv_ques[i].isDisabled="";
         }
-        setStates({...states,curpage: "quiz",questions: prv_ques,attempted: 0});
+        setStates({...states,curpage: "quiz",questions: prv_ques,attempted: 0,tot_cor_ans: 0});
     }
     return (
         <div className="maindiv">
