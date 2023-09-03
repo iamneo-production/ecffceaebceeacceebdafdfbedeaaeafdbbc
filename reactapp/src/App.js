@@ -81,14 +81,16 @@ function App(){
         <div className="maindiv">
             <h1 style={{textAlign: "center"}}>Quizz App</h1>
             <p>{states.tot_cor_ans}</p>
-            {states.curpage==="strt" ? 
+            {(states.curpage==="strt") ? 
             <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "35%",height: "45px"}} onClick={()=>setStates({...states,curpage: "quiz"})}>Start Quiz</button> 
-            : <div className="Quiz">
+            : (states.curpage==="quiz") ? 
+            <div className="Quiz">
             <Card 
             qno={states.questions[0].questionId}
             question={states.questions[0].question}
             correctAnswerMarkUpdate={setAns}
             attempt={mockFunction}
+            isDisabled= {states.questions[0].isDisabled}
             options={{
             option1: states.questions[0].option1,
             option2: states.questions[0].option2,
@@ -99,6 +101,7 @@ function App(){
             />   
             <Card 
             qno={states.questions[1].questionId}
+            isDisabled= {states.questions[1].isDisabled}
             question={states.questions[1].question}
             correctAnswerMarkUpdate={setAns}
             attempt={mockFunction}
@@ -113,6 +116,7 @@ function App(){
             <Card 
             qno={states.questions[2].questionId}
             question={states.questions[2].question}
+            isDisabled= {states.questions[2].isDisabled}
             correctAnswerMarkUpdate={setAns}
             attempt={mockFunction}
             options={{
@@ -127,6 +131,7 @@ function App(){
             qno={states.questions[3].questionId}
             question={states.questions[3].question}
             correctAnswerMarkUpdate={setAns}
+            isDisabled= {states.questions[3].isDisabled}
             options={{
             option1: states.questions[3].option1,
             option2: states.questions[3].option2,
@@ -138,6 +143,7 @@ function App(){
             <Card 
             qno={states.questions[4].questionId}
             question={states.questions[4].question}
+            isDisabled= {states.questions[4].isDisabled}
             correctAnswerMarkUpdate={setAns}
             attempt={mockFunction}
             options={{
@@ -149,6 +155,9 @@ function App(){
             answer={states.questions[4].answer}
             />             
             {(states.attempted>=5) ? <Button tag="1" choice="1" name="hlo" isdisabled="" onclick={()=>{setStates({...states,curpage: "strt"})}}>Show Results</Button>  : ""}
+            </div> 
+            : <div>
+                
             </div>
             }
             
