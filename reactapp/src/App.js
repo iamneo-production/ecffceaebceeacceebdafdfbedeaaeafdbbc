@@ -68,12 +68,13 @@ function App(){
         }
         for(let i=0;i<5;i++)
         {
-            if(i==tag-1){
-            prv_ques[i].isDisabled=true;
-            break;
+            if(i===tag-1){
+            prv_ques[i].isDisabled="true";
+            console.log(tag);
             }
         }
-        setStates({...states,tot_cor_ans: prv_ans,prv_ques,attempted: prv_att+1});
+        console.log(prv_ques);
+        setStates({...states,tot_cor_ans: prv_ans,questions: prv_ques,attempted: prv_att+1});
     }
     const mockFunction=()=>{}
     return (
@@ -97,7 +98,7 @@ function App(){
             answer={states.questions[0].answer}
             />   
             <Card 
-            
+            qno={states.questions[1].questionId}
             question={states.questions[1].question}
             correctAnswerMarkUpdate={setAns}
             attempt={mockFunction}
@@ -110,7 +111,7 @@ function App(){
             answer={states.questions[1].answer}
             />
             <Card 
-            
+            qno={states.questions[2].questionId}
             question={states.questions[2].question}
             correctAnswerMarkUpdate={setAns}
             attempt={mockFunction}
@@ -123,7 +124,7 @@ function App(){
             answer={states.questions[2].answer}
             />
             <Card 
-            
+            qno={states.questions[3].questionId}
             question={states.questions[3].question}
             correctAnswerMarkUpdate={setAns}
             options={{
@@ -135,8 +136,8 @@ function App(){
             answer={states.questions[3].answer}
             />
             <Card 
-            
-            question={states.questions[0].question}
+            qno={states.questions[4].questionId}
+            question={states.questions[4].question}
             correctAnswerMarkUpdate={setAns}
             attempt={mockFunction}
             options={{
@@ -145,7 +146,7 @@ function App(){
             option3: states.questions[4].option3,
             option4: states.questions[4].option4
             }}
-            answer={states.questions[0].answer}
+            answer={states.questions[4].answer}
             />             
             {(states.attempted>=5) ? <Button tag="1" choice="1" name="hlo" isdisabled="" onclick={()=>{setStates({...states,curpage: "strt"})}}>Show Results</Button>  : ""}
             </div>
