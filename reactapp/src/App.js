@@ -66,7 +66,7 @@ function App(){
             <Card question={states.questions[2].Question} tag="3" options={states.questions[2].Options} setAns={setAns} isDisabled={states.questions[2].isDisabled}/>
             <Card question={states.questions[3].Question} tag="4" options={states.questions[3].Options} setAns={setAns} isDisabled={states.questions[3].isDisabled}/>
             <Card question={states.questions[4].Question} tag="4" options={states.questions[4].Options} setAns={setAns} isDisabled={states.questions[4].isDisabled}/>
-            {(states.attempted==5) ? <Button tag="1" choice="1" name="hlo" content="Show Results" isdisabled="" onclick={setAns}/>  : ""}
+            {(states.attempted>=5) ? <Button tag="1" choice="1" name="hlo" content="Show Results" isdisabled="" onclick={()=>{setStates({...states,curpage: "strt"})}}/>  : ""}
             </div>
             }
             
