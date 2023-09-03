@@ -59,7 +59,7 @@ function App(){
             }
         ]
     });
-    const setAns=(choice,ans)=>{
+    const setAns=(tag,choice,ans)=>{
         let prv_ans=states.tot_cor_ans;
         let prv_att=states.attempted;
         let prv_ques=states.questions;
@@ -68,7 +68,10 @@ function App(){
         }
         for(let i=0;i<5;i++)
         {
-            if(i==)
+            if(i==tag-1){
+            prv_ques[i].isDisabled=true;
+            break;
+            }
         }
         setStates({...states,tot_cor_ans: prv_ans,prv_ques,attempted: prv_att+1});
         console.log(states.attempted);
@@ -92,12 +95,59 @@ function App(){
             option4: states.questions[0].option4
             }}
             answer={states.questions[0].answer}
-            />                
-            {/* <Card question={states.questions[0].Question} tag="1" options={states.questions[0].Options} setAns={setAns} isDisabled={states.questions[0].isDisabled}/>
-            <Card question={states.questions[1].Question} tag="2" options={states.questions[1].Options} setAns={setAns} isDisabled={states.questions[1].isDisabled}/>
-            <Card question={states.questions[2].Question} tag="3" options={states.questions[2].Options} setAns={setAns} isDisabled={states.questions[2].isDisabled}/>
-            <Card question={states.questions[3].Question} tag="4" options={states.questions[3].Options} setAns={setAns} isDisabled={states.questions[3].isDisabled}/>
-            <Card question={states.questions[4].Question} tag="4" options={states.questions[4].Options} setAns={setAns} isDisabled={states.questions[4].isDisabled}/> */}
+            />   
+            <Card 
+            key={states.questions[1].questionId}
+            question={states.questions[1].question}
+            correctAnswerMarkUpdate={setAns}
+            attempt={mockFunction}
+            options={{
+            option1: states.questions[1].option1,
+            option2: states.questions[1].option2,
+            option3: states.questions[1].option3,
+            option4: states.questions[1].option4
+            }}
+            answer={states.questions[1].answer}
+            />
+            <Card 
+            key={states.questions[2].questionId}
+            question={states.questions[2].question}
+            correctAnswerMarkUpdate={setAns}
+            attempt={mockFunction}
+            options={{
+            option1: states.questions[2].option1,
+            option2: states.questions[2].option2,
+            option3: states.questions[2].option3,
+            option4: states.questions[2].option4
+            }}
+            answer={states.questions[2].answer}
+            />
+            <Card 
+            key={states.questions[3].questionId}
+            question={states.questions[3].question}
+            correctAnswerMarkUpdate={setAns}
+            attempt={mockFunction}
+            options={{
+            option1: states.questions[3].option1,
+            option2: states.questions[3].option2,
+            option3: states.questions[3].option3,
+            option4: states.questions[3].option4
+            }}
+            answer={states.questions[3].answer}
+            />
+            <Card 
+            key={states.questions[0].questionId}
+            question={states.questions[0].question}
+            correctAnswerMarkUpdate={setAns}
+            attempt={mockFunction}
+            options={{
+            option1: states.questions[4].option1,
+            option2: states.questions[4].option2,
+            option3: states.questions[4].option3,
+            option4: states.questions[4].option4
+            }}
+            answer={states.questions[0].answer}
+            />             
             {(states.attempted>=5) ? <Button tag="1" choice="1" name="hlo" content="Show Results" isdisabled="" onclick={()=>{setStates({...states,curpage: "strt"})}}/>  : ""}
             </div>
             }
