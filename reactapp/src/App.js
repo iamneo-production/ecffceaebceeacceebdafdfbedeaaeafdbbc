@@ -147,7 +147,7 @@ function App(){
             }}
             answer={states.questions[0].answer}
             />             
-            {(states.attempted>=5) ? <Button tag="1" choice="1" name="hlo" content="Show Results" isdisabled="" onclick={()=>{setStates({...states,curpage: "strt"})}}/>  : ""}
+            {(states.attempted>=5) ? <Button tag="1" choice="1" name="hlo" isdisabled="" onclick={()=>{setStates({...states,curpage: "strt"})}}>Show Results</Button>  : ""}
             </div>
             }
             
