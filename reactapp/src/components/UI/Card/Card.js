@@ -1,8 +1,8 @@
 import Button from "../Button/Button";
-function Banner(props){
+function Card(props){
     return(
         <div className="outerdiv">
-            <p>{props.question}</p>
+            <h4>{props.question}</h4>
             <div style={{display: "flex"}}>
             <Button tag={props.tag} choice="1" className="buttons" content={props.options[0]} isdisabled={props.isDisabled} onclick={props.setAns}/>
             <Button tag={props.tag} choice="2" className="buttons" content={props.options[1]} isdisabled={props.isDisabled} onclick={props.setAns}/>
@@ -12,4 +12,4 @@ function Banner(props){
         </div>
     )
 }
-export default Banner;
+export default Card;
