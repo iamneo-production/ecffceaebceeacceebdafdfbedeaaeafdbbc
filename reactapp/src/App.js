@@ -8,15 +8,6 @@ function App(){
         attempted: 0,
         questions: [
             {
-                questionId : 2,
-                question : "What color is are the leaves ?",
-                option1 : "Blue",
-                option2 : "Red",
-                option3 : "Yellow",
-                option4 : "Green",
-                answer : "Green"
-            },
-            {
                 Question: "Who is the father of nation ?",
                 Options: ["Nehru","Gandhi","Ambedkar","Bose"],
                 correctAns: "2",
@@ -45,6 +36,15 @@ function App(){
                 Options: ["Blue","Red","Yellow","Green"],
                 correctAns: "3",
                 isDisabled: ""
+            },
+            {
+                questionId : 2,
+                question : "What color is are the leaves ?",
+                option1 : "Blue",
+                option2 : "Red",
+                option3 : "Yellow",
+                option4 : "Green",
+                answer : "Green"
             }
         ]
     });
@@ -65,18 +65,27 @@ function App(){
             {states.curpage==="strt" ? 
             <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "35%",height: "45px"}} onClick={()=>setStates({...states,curpage: "quiz"})}>Start Quiz</button> 
             : <div>
+            {
+                // questionId : 2,
+                // question : "What color is are the leaves ?",
+                // option1 : "Blue",
+                // option2 : "Red",
+                // option3 : "Yellow",
+                // option4 : "Green",
+                // answer : "Green"
+            }
             <Card 
-            key={}
-            question={questionProp.question}
-            correctAnswerMarkUpdate={mockFunction}
+            key={states.questions[0].questionId}
+            question={states.questions[0].question}
+            correctAnswerMarkUpdate={setAns}
             attempt={mockFunction}
             options={{
-            option1: questionProp.option1,
-            option2: questionProp.option2,
-            option3: questionProp.option3,
-            option4: questionProp.option4
+            option1: states.questions[0].option1,
+            option2: states.questions[0].option2,
+            option3: states.questions[0].option3,
+            option4: states.questions[0].option4
             }}
-            answer={questionProp.answer}
+            answer={states.questions[0].answer}
             />                
             {/* <Card question={states.questions[0].Question} tag="1" options={states.questions[0].Options} setAns={setAns} isDisabled={states.questions[0].isDisabled}/>
             <Card question={states.questions[1].Question} tag="2" options={states.questions[1].Options} setAns={setAns} isDisabled={states.questions[1].isDisabled}/>
