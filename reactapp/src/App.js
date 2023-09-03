@@ -84,7 +84,7 @@ function App(){
             <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "35%",height: "45px"}} onClick={()=>setStates({...states,curpage: "quiz"})}>Start Quiz</button> 
             : <div className="Quiz">
             <Card 
-            
+            qno={states.questions[0].questionId}
             question={states.questions[0].question}
             correctAnswerMarkUpdate={setAns}
             attempt={mockFunction}
@@ -151,7 +151,6 @@ function App(){
             </div>
             }
             
-            {/* <Button tag="1" choice="1" name="hlo" content="Start Quiz" isdisabled="" onclick={setAns}/> */}
         </div>
     )
 }
