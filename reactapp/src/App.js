@@ -82,9 +82,9 @@ function App(){
             <p>{states.tot_cor_ans}</p>
             {states.curpage==="strt" ? 
             <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "35%",height: "45px"}} onClick={()=>setStates({...states,curpage: "quiz"})}>Start Quiz</button> 
-            : <div>
+            : <div className="Quiz">
             <Card 
-            key={states.questions[0].questionId}
+            
             question={states.questions[0].question}
             correctAnswerMarkUpdate={setAns}
             attempt={mockFunction}
@@ -97,7 +97,7 @@ function App(){
             answer={states.questions[0].answer}
             />   
             <Card 
-            key={states.questions[1].questionId}
+            
             question={states.questions[1].question}
             correctAnswerMarkUpdate={setAns}
             attempt={mockFunction}
@@ -110,7 +110,7 @@ function App(){
             answer={states.questions[1].answer}
             />
             <Card 
-            key={states.questions[2].questionId}
+            
             question={states.questions[2].question}
             correctAnswerMarkUpdate={setAns}
             attempt={mockFunction}
@@ -123,7 +123,7 @@ function App(){
             answer={states.questions[2].answer}
             />
             <Card 
-            key={states.questions[3].questionId}
+            
             question={states.questions[3].question}
             correctAnswerMarkUpdate={setAns}
             options={{
@@ -135,7 +135,7 @@ function App(){
             answer={states.questions[3].answer}
             />
             <Card 
-            key={states.questions[0].questionId}
+            
             question={states.questions[0].question}
             correctAnswerMarkUpdate={setAns}
             attempt={mockFunction}
