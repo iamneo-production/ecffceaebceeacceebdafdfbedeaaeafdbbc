@@ -91,7 +91,7 @@ function App(){
 
             {(states.curpage==="strt") ? 
             <div>
-                {(states.retry==1) ? <div>You scored {states.tot_cor_ans}/5 correctly</div> : ""}
+                {(states.retry==1) ? <div className="result">You scored {states.tot_cor_ans}/5 correctly</div> : ""}
                 <button className="start_btn" onClick={()=>{initialise()}}>Start Quiz</button> 
             </div>
             :
