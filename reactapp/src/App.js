@@ -1,7 +1,7 @@
 import {useState} from "react";
 import Button from "./components/UI/Button/Button";
 import Card from "./components/UI/Card/Card";
-import "./"
+import "./index.css";
 function App(){
     var [states,setStates]=useState({
         curpage: "strt",
@@ -92,7 +92,7 @@ function App(){
             {(states.curpage==="strt") ? 
             <div>
                 {(states.retry==1) ? <div>You scored {states.tot_cor_ans}/5 correctly</div> : ""}
-                <button style={{backgroundColor: "#FFBA93",border: "1px solid #FFBA93",padding: "5px",width: "35%",height: "45px"}} onClick={()=>{initialise()}}>Start Quiz</button> 
+                <button className="start_btn" onClick={()=>{initialise()}}>Start Quiz</button> 
             </div>
             :
             <div className="Quiz">
@@ -165,7 +165,7 @@ function App(){
             }}
             answer={states.questions[4].answer}
             />             
-            {(states.attempted>=5) ? <Button tag="1" choice="1" name="hlo" isdisabled="" onclick={()=>{setStates({...states,curpage: "strt",retry: 1})}}>Show Results</Button>  : ""}
+            {(states.attempted>=5) ? <Button tag="1" choice="1" name="show_btn" isdisabled="" onclick={()=>{setStates({...states,curpage: "strt",retry: 1})}}>Show Results</Button>  : ""}
             </div>
             }
             
