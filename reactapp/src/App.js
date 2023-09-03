@@ -86,7 +86,7 @@ function App(){
         setStates({...states,curpage: "quiz",questions: prv_ques,attempted: 0,tot_cor_ans: 0});
     }
     return (
-        <div className="maindiv">
+        <div className="main">
             <h1 style={{textAlign: "center"}}>Quizz App</h1>
 
             {(states.curpage==="strt") ? 
@@ -165,10 +165,9 @@ function App(){
             }}
             answer={states.questions[4].answer}
             />             
-            {(states.attempted>=5) ? <Button tag="1" choice="1" name="show_btn" isdisabled="" onclick={()=>{setStates({...states,curpage: "strt",retry: 1})}}>Show Results</Button>  : ""}
             </div>
             }
-            
+            {(states.attempted>=5) ? <Button tag="1" choice="1" name="show_btn" isdisabled="" onclick={()=>{setStates({...states,curpage: "strt",retry: 1,attempted:0})}}>Show Results</Button>  : ""}
         </div>
     )
 }
